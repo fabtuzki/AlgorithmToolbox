@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99b9a59d-c550-4f10-a20d-fb5850919882" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CarFueling.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MaximumValueOfLoot.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MoneyChange.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CollectSignature.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MaximumAdRevenue.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MaximumNumberOfPrize.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MaximumSalary.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,19 +21,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MaximumValueOfLoot.scala">
+        <entry file="file://$PROJECT_DIR$/src/CollectSignature.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="403">
+              <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MaximumNumberOfPrize.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CarFueling.scala">
+        <entry file="file://$PROJECT_DIR$/src/MaximumSalary.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="135">
+              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -57,6 +70,10 @@
         <option value="$PROJECT_DIR$/src/MoneyChange.scala" />
         <option value="$PROJECT_DIR$/src/MaximumValueOfLoot.scala" />
         <option value="$PROJECT_DIR$/src/CarFueling.scala" />
+        <option value="$PROJECT_DIR$/src/MaximumAdRevenue.scala" />
+        <option value="$PROJECT_DIR$/src/CollectSignature.scala" />
+        <option value="$PROJECT_DIR$/src/MaximumNumberOfPrize.scala" />
+        <option value="$PROJECT_DIR$/src/MaximumSalary.scala" />
       </list>
     </option>
   </component>
@@ -65,7 +82,9 @@
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -112,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CarFueling">
+  <component name="RunManager" selected="Application.MaximumSalary">
     <configuration name="CarFueling" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="CarFueling" />
       <module name="AlgorithmToolbox" />
@@ -120,29 +139,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LastDigitPartialFibSum" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="LastDigitPartialFibSum" />
+    <configuration name="CollectSignature" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="CollectSignature" />
       <module name="AlgorithmToolbox" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LastDigitSumSquareOfFibNumber" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="LastDigitSumSquareOfFibNumber" />
+    <configuration name="MaximumAdRevenue" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MaximumAdRevenue" />
       <module name="AlgorithmToolbox" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaximumValueOfLoot" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="MaximumValueOfLoot" />
+    <configuration name="MaximumNumberOfPrize" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MaximumNumberOfPrize" />
       <module name="AlgorithmToolbox" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoneyChange" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="MoneyChange" />
+    <configuration name="MaximumSalary" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MaximumSalary" />
       <module name="AlgorithmToolbox" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaximumSalary" />
+        <item itemvalue="Application.MaximumNumberOfPrize" />
+        <item itemvalue="Application.CollectSignature" />
+        <item itemvalue="Application.MaximumAdRevenue" />
         <item itemvalue="Application.CarFueling" />
-        <item itemvalue="Application.MaximumValueOfLoot" />
-        <item itemvalue="Application.MoneyChange" />
-        <item itemvalue="Application.LastDigitSumSquareOfFibNumber" />
-        <item itemvalue="Application.LastDigitPartialFibSum" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +203,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35262594" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23901394" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -202,6 +221,26 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointLogExpression">
+      <expression>
+        <expression-string>}
+
+
+      }
+
+    }
+
+    //Case 2: when one of the 
+    if (compared == false) {
+
+
+    }</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MaximumProductPairwise.scala">
@@ -277,6 +316,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaximumAdRevenue.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CollectSignature.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaximumNumberOfPrize.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaximumSalary.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
