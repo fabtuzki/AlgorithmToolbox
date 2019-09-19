@@ -1,14 +1,66 @@
-object LastDigitOfFibSum {
-  def main(args: Array[String]): Unit = {
-    println(lastDigitOfFibSum(3))
+import scala.collection.mutable.ArrayBuffer
+import scala.util.control.Breaks
+
+object LastDigitOfFibSum extends App {
+  override def main(args: Array[String]): Unit = {
+//    val input = scala.io.Source.stdin.getLines().next()
+    println(lastDigitOfFibSum(832564823476L))
 
   }
 
   def lastDigitOfFibSum(k: Long): Long = {
-    val pisanoPeriodArr = PisanoPeriod.PisanoPeriod(10)
-    val currentDigit =  pisanoPeriodArr.slice(0, modulo(k.toInt + 1, pisanoPeriodArr.length) ).sum
+    val pisanoPeriodArr = PisanoPeriod(10)
+    val currentDigit = pisanoPeriodArr.slice(0, modulo(k.toInt + 1, pisanoPeriodArr.length)).sum
 
     modulo(currentDigit, 10)
+  }
+
+  def PisanoPeriod(m: Long): Array[Long] = {
+    val pisanoPeriod = new ArrayBuffer[Long]
+    pisanoPeriod.append(0)
+    pisanoPeriod.append(1)
+    var modOfFib = 0L
+    var prev = 0L
+    var next = 1L
+    var i = true
+    while (i) {
+
+      val tmpNext = modulo(prev + next, m)
+      prev = modulo(next, m)
+      next = modulo(tmpNext, m)
+      modOfFib = modulo(next, m)
+      pisanoPeriod.append(modOfFib)
+
+      var checkRepeat = false
+
+      if (pisanoPeriod(pisanoPeriod.length - 1) == 1 && pisanoPeriod(pisanoPeriod.length - 2) == 0 && pisanoPeriod.length > 2) {
+        checkRepeat = true
+        val currentLength = pisanoPeriod.length
+        val loop = new Breaks
+        loop.breakable {
+          for (k <- 2 until currentLength - 2) {
+
+            val tmpNext = modulo(prev + next, m)
+            prev = modulo(next, m)
+            next = modulo(tmpNext, m)
+            modOfFib = modulo(next, m)
+            pisanoPeriod.append(modOfFib)
+
+            if (modOfFib != pisanoPeriod(k)) {
+              checkRepeat = false
+              loop.break()
+            }
+          }
+        }
+      }
+
+      if (checkRepeat) {
+        i = false
+        pisanoPeriod.trimEnd(pisanoPeriod.length / 2)
+      }
+    }
+    pisanoPeriod.toArray
+
   }
 
   def modulo(dividend: Double, divisor: Long): Int = {

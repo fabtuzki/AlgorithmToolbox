@@ -1,13 +1,11 @@
 import scala.collection.mutable.ArrayBuffer
 
-object NumberOfInversions {
-  def main(args: Array[String]): Unit = {
-
-    val inputArr = Array(2 ,3 ,9 ,2, 9)
-
+object NumberOfInversions extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().toArray
+    val inputArr = input(1).split(" ").map(_.toInt)
     val outputArr = mergeSort(inputArr)
-    outputArr._1.foreach(x => println(x))
-    println("count inversion: " + outputArr._2)
+    println(outputArr._2)
 
   }
 
@@ -35,8 +33,8 @@ object NumberOfInversions {
 
       val firstFirst = firstArrBuffer.head
       val firstSecond = secondArrBuffer.head
-            println("first element of B " + firstFirst)
-            println("first element of C " + firstSecond)
+      //      println("first element of B " + firstFirst)
+      //      println("first element of C " + firstSecond)
       if (firstFirst < firstSecond) {
         outputArray.append(firstFirst)
         firstArrBuffer.remove(0)
@@ -44,23 +42,23 @@ object NumberOfInversions {
         outputArray.append(firstSecond)
         secondArrBuffer.remove(0)
         inversionCount += firstArrBuffer.length
-                println("first first > first second")
+        //        println("first first > first second")
       } else {
         outputArray.append(firstFirst)
         firstArrBuffer.remove(0)
-        println("first first = first second")
+        //        println("first first = first second")
       }
 
     }
 
     if (firstArrBuffer.nonEmpty) {
-            println("first array non empty")
+      //      println("first array non empty")
       firstArrBuffer.foreach(x => {
         outputArray.append(x)
       })
 
     } else if (secondArrBuffer.nonEmpty) {
-            println("second array non empty")
+      //      println("second array non empty")
       secondArrBuffer.foreach(x => {
         outputArray.append(x)
       })

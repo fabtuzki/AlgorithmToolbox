@@ -1,6 +1,9 @@
-object GreatestCommonDivisor {
-  def main(args: Array[String]): Unit = {
-    println(GreatestCommonDivisor(28851538, 1183019))
+object GreatestCommonDivisor extends App{
+  override def main(args: Array[String]): Unit = {
+
+    val input = scala.io.Source.stdin.getLines().next().split(" ").map(_.toInt)
+
+    println(GreatestCommonDivisor(input(0), input(2)))
 
   }
 

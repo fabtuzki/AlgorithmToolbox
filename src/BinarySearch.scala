@@ -1,21 +1,26 @@
-object BinarySearch {
+import scala.collection.mutable.ArrayBuffer
 
-  def main(args: Array[String]): Unit = {
+object BinarySearch extends App {
 
-    val searchArr = Array(1, 5, 8, 12, 13)
+  override def main(args: Array[String]): Unit = {
+        val input = scala.io.Source.stdin.getLines().toArray
+        val searchArr = input(0).split(" ").drop(1).map(_.toInt)
 
-    val lookupArr = Array(8, 1, 23, 1, 11)
+        val lookupArr = input(1).split(" ").drop(1).map(_.toInt)
 
+//    val searchArr = Array(1, 2, 3, 4, 5)
+//    val lookupArr = Array(1, 2, 3, 4, 5)
 
-    lookupArr.foreach(x => println(binarySearch(searchArr, x)))
+    val out = new ArrayBuffer[Int]
+
+    lookupArr.foreach(x => out.append(binarySearch(searchArr, x, 0, searchArr.length)))
+    println(out.mkString(" "))
 
   }
 
-  def binarySearch(searchArr: Array[Int], lookup: Int): Int = {
-    val start = 0
-    val end = searchArr.length
-    val mid = math.ceil((start + end) / 2).toInt
 
+  def binarySearch(searchArr: Array[Int], lookup: Int, start: Int, end: Int): Int = {
+    val mid = math.ceil(start + (end - start) / 2).toInt
     if (start == end && start != lookup) {
       return -1
     }
@@ -23,11 +28,9 @@ object BinarySearch {
     if (lookup == searchArr(mid)) {
       mid
     } else if (lookup > searchArr(mid)) {
-      val searchArrSlide = searchArr.slice(mid + 1, end)
-      binarySearch(searchArrSlide, lookup)
+      binarySearch(searchArr, lookup, mid + 1, end)
     } else {
-      val searchArrSlide = searchArr.slice(start, mid)
-      binarySearch(searchArrSlide, lookup)
+      binarySearch(searchArr, lookup, start, mid)
     }
   }
 

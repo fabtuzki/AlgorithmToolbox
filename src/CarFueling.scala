@@ -1,9 +1,12 @@
 import scala.util.control.Breaks
 
-object CarFueling {
-  def main(args: Array[String]): Unit = {
-
-    println(carFueling(200, 250, Array(100,150)))
+object CarFueling extends App {
+  override def main(args: Array[String]): Unit = {
+    //    val input = scala.io.Source.stdin.getLines().toArray
+    //    val dist = input(0).toInt
+    //    val tank = input(1).toInt
+    //    val stops = input(3).split(" ").map(_.toInt)
+    println(carFueling(950, 400, Array(200 ,375, 550, 750)))
   }
 
 
@@ -19,7 +22,7 @@ object CarFueling {
       while (leftDistance >= tank) {
         for (i <- nextStop until gasStation.length) {
           nextStop = i
-          if (currentPosition + tank <= gasStation(i) ) {
+          if (currentPosition + tank <= gasStation(i)) {
             if (i - 1 != currentStop) {
               currentPosition = gasStation(i - 1)
               stopCount += 1

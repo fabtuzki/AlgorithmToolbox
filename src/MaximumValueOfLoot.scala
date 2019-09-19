@@ -1,8 +1,12 @@
 import scala.util.control.Breaks
 
-object MaximumValueOfLoot {
-  def main(args: Array[String]): Unit = {
-    println(maximumValueOfLoot(Array((500,  30)), 10))
+object MaximumValueOfLoot extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().toArray
+
+    val knapsack = input(0).split(" ")(1).toInt
+    val weight = input.drop(1).map(_.split(" ")).map(x => (x(0).toInt, x(1).toInt))
+    println(maximumValueOfLoot(weight, knapsack))
 
   }
 

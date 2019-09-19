@@ -1,8 +1,10 @@
-object MaximumAdRevenue {
+object MaximumAdRevenue extends App {
 
-  def main(args: Array[String]): Unit = {
-
-    println(maximumAdRevenue(Array(1, 3, -5), Array(-2, 4, 1)))
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().toArray
+    val profit = input(1).split(" ").map(_.toInt)
+    val slot = input(2).split(" ").map(_.toInt)
+    println(maximumAdRevenue(profit, slot))
   }
 
 

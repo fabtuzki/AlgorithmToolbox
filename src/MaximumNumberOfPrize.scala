@@ -1,8 +1,12 @@
 import scala.collection.mutable.ArrayBuffer
 
-object MaximumNumberOfPrize {
-  def main(args: Array[String]): Unit = {
-    println(maximumNumberOfPrize(25).mkString(" "))
+object MaximumNumberOfPrize extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().next()
+    val out = maximumNumberOfPrize(input.toInt)
+    println(out.length)
+    println(out.mkString(" ")
+    )
   }
 
   def maximumNumberOfPrize(k: Int): Array[Int] = {

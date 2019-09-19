@@ -1,8 +1,9 @@
-import scala.collection.mutable.ArrayBuffer
 
-object MoneyChange {
-  def main(args: Array[String]): Unit = {
-    println(MoneyChange(28))
+object MoneyChange extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().next()
+
+    println(MoneyChange(input.toInt))
 
   }
 

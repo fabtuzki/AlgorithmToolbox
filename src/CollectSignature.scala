@@ -1,12 +1,17 @@
 import scala.collection.mutable.ListBuffer
 import scala.util.control.Breaks
 
-object CollectSignature {
-  def main(args: Array[String]): Unit = {
-    println(collectSignature(Array((1, 3),
+object CollectSignature extends App {
+  override def main(args: Array[String]): Unit = {
+
+    //    val input = scala.io.Source.stdin.getLines().toArray.drop(1).map(_.split(" ")).map(x => (x(0).toInt, x(1).toInt))
+
+    val out = collectSignature(Array((4, 7),
+      (1, 3),
       (2, 5),
-      (3, 6)
-    )))
+      (5, 6)))
+    println(out.length)
+    println(out)
 
   }
 

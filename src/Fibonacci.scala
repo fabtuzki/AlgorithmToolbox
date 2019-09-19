@@ -1,6 +1,8 @@
-object Fibonacci {
-  def main(args: Array[String]): Unit = {
-    println(Fibonacci(50))
+object Fibonacci extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().next()
+
+    println(Fibonacci(input.toInt))
   }
 
   def Fibonacci(n: Int): Long = {

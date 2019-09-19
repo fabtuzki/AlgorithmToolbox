@@ -1,31 +1,37 @@
 import scala.util.Random
 
-object ImprovedQuickSort {
-  def main(args: Array[String]): Unit = {
+object ImprovedQuickSort extends App {
+  override def main(args: Array[String]): Unit = {
 
-    val inputArr = Array(1,0,2,45,20,20,23,21,25,26,46,62,1,5,2,2,0,0)
+    val input = scala.io.Source.stdin.getLines().toArray
+    val inputArr = input(1).split(" ").map(_.toLong)
 
-
+    //    val inputArr = Array(1000000000L, 1, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1, 1, 1, 1, 1, 1, 1, 1000000000, 1000000000, 1000, 1000000000, 1000000000, 1000, 1000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000)
     improvedQuickSort(inputArr, 0, inputArr.length - 1)
-    inputArr.foreach(x => println(x))
-
+    println(inputArr.mkString(" "))
   }
 
-  def improvedQuickSort(arr: Array[Int], left: Int, right: Int): Unit = {
+  def improvedQuickSort(arr: Array[Long], left: Int, right: Int): Unit = {
     if (left >= right) {
       return
     }
     val randomSwap = Random.nextInt(right - left) + left
+    //    println("randomswap is " + randomSwap)
+    //    println("current left  " + left)
+    //    println("current right " + right)
+    //    println("array before swap  " + arr.mkString(" "))
     swap(left, randomSwap, arr)
+    //    println("array after swap  " + arr.mkString(" "))
     val (splitPoint1, splitPoint2) = partition(arr, left, right)
-    improvedQuickSort(arr, left, splitPoint1)
-
-    improvedQuickSort(arr, splitPoint2, right)
+    //    println("current splitting point 1 is " + splitPoint1 + " current splittling point 2 is " + splitPoint2)
+    improvedQuickSort(arr, left, splitPoint1 - 1)
+    improvedQuickSort(arr, splitPoint2 + 1, right)
   }
 
-  def partition(arr: Array[Int], left: Int, right: Int): (Int, Int) = {
+  def partition(arr: Array[Long], left: Int, right: Int): (Int, Int) = {
 
     val pivot = arr(left)
+    //    println("pivot is " + pivot)
     var markPointLessThanPivot = left
     var markPointEqualPivot = left
     for (i <- left + 1 to right) {
@@ -36,35 +42,37 @@ object ImprovedQuickSort {
           markPointEqualPivot += 1
           swap(i, markPointEqualPivot, arr)
         }
-      }
-
-      if (arr(i) == pivot) {
+      } else if (arr(i) == pivot) {
         if (markPointEqualPivot < markPointLessThanPivot) {
           markPointEqualPivot = markPointLessThanPivot + 1
           swap(i, markPointEqualPivot, arr)
         } else {
           markPointEqualPivot += 1
           swap(i, markPointEqualPivot, arr)
+
         }
 
       }
+      //      println("array after check " + i + " " + arr.mkString(" "))
+      //      println("k is " + markPointEqualPivot)
+      //      println("j is " + markPointLessThanPivot)
 
     }
 
     swap(markPointLessThanPivot, left, arr)
 
     if (markPointEqualPivot > markPointLessThanPivot) {
-      (markPointLessThanPivot - 1, markPointEqualPivot + 1)
+      (markPointLessThanPivot, markPointEqualPivot)
 
     } else {
 
-      (markPointLessThanPivot - 1, markPointLessThanPivot + 1)
+      (markPointLessThanPivot, markPointLessThanPivot)
 
 
     }
   }
 
-  def swap(a: Int, b: Int, arr: Array[Int]): Unit = {
+  def swap(a: Int, b: Int, arr: Array[Long]): Unit = {
     val arrA = arr(a)
     val arrB = arr(b)
 
@@ -72,4 +80,6 @@ object ImprovedQuickSort {
     arr.update(b, arrA)
 
   }
+
+
 }

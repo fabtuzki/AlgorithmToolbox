@@ -1,7 +1,7 @@
-object LastDigitOfLargeFib {
-  def main(args: Array[String]): Unit = {
-
-    println(LastDigit(200))
+object LastDigitOfLargeFib extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().next()
+   println(LastDigit(input.toInt))
   }
 
 

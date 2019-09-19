@@ -1,12 +1,11 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks
 
-object PisanoPeriod {
-  def main(args: Array[String]): Unit = {
+object PisanoPeriod extends App {
+  override def main(args: Array[String]): Unit = {
 
-    println(FibonacciResult(239, 1000))
-
-    //    PisanoPeriod(239L).foreach(x => println(x))
+    val input = scala.io.Source.stdin.getLines().next().split(" ").map(_.toLong)
+    println(FibonacciResult(input(0), input(1)))
 
 
   }

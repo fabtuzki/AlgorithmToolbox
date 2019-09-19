@@ -1,13 +1,14 @@
-import scala.util.control.Breaks
+object MaximumSalary extends App {
+  override def main(args: Array[String]): Unit = {
+    val input = scala.io.Source.stdin.getLines().toArray
+    val numberList = input(1).split(" ").map(_.toInt)
 
-object MaximumSalary {
-  def main(args: Array[String]): Unit = {
-    println(maximumSalary(Array(9897, 989)))
+    println(maximumSalary(numberList))
   }
 
-  def maximumSalary(l: Array[Int]): Int = {
+  def maximumSalary(l: Array[Int]): Double = {
     val lSorted = l.sortWith(isGreaterThanOrEqualTo(_, _))
-    lSorted.mkString.toInt
+    lSorted.mkString.toDouble
 
   }
 
