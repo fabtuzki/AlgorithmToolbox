@@ -3,14 +3,14 @@ import scala.util.control.Breaks
 
 object LastDigitOfFibSum extends App {
   override def main(args: Array[String]): Unit = {
-//    val input = scala.io.Source.stdin.getLines().next()
-    println(lastDigitOfFibSum(832564823476L))
+    val input = scala.io.Source.stdin.getLines().next().toLong
+    println(lastDigitOfFibSum(input))
 
   }
 
   def lastDigitOfFibSum(k: Long): Long = {
     val pisanoPeriodArr = PisanoPeriod(10)
-    val currentDigit = pisanoPeriodArr.slice(0, modulo(k.toInt + 1, pisanoPeriodArr.length)).sum
+    val currentDigit = pisanoPeriodArr.slice(0, modulo(k + 1, pisanoPeriodArr.length)).sum
 
     modulo(currentDigit, 10)
   }

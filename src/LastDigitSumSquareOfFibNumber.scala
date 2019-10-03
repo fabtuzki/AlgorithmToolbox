@@ -12,8 +12,8 @@ object LastDigitSumSquareOfFibNumber extends App {
   def lastDigitSumSquareOfFibNumber(k: Long): Long = {
 
     val pisanoPeriodArr = PisanoPeriod(10)
-    val currentDigit = pisanoPeriodArr(modulo(k.toInt, pisanoPeriodArr.length))
-    val nextDigit = pisanoPeriodArr(modulo(k.toInt + 1, pisanoPeriodArr.length))
+    val currentDigit = pisanoPeriodArr(modulo(k, pisanoPeriodArr.length))
+    val nextDigit = pisanoPeriodArr(modulo(k + 1, pisanoPeriodArr.length))
     modulo(currentDigit * nextDigit, 10)
 
 

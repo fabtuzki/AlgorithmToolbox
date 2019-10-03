@@ -7,14 +7,26 @@ object LastDigitPartialFibSum extends App {
     val input = scala.io.Source.stdin.getLines().next().split(" ").map(_.toLong)
 
     println(lastDigitPartialFibSum(input(0), input(1)))
+
+    //    println(lastDigitPartialFibSum(5618252L, 6583591534156L))
+
   }
 
 
   def lastDigitPartialFibSum(s: Long, e: Long): Long = {
     val pisanoPeriodArr = PisanoPeriod(10)
-    val currentDigit = pisanoPeriodArr.slice(modulo(s.toInt, pisanoPeriodArr.length), modulo(e.toInt + 1, pisanoPeriodArr.length)).sum
+    //    println("pisano period for 10 " + pisanoPeriodArr.mkString(" "))
+    //    println("modulos of 6583591534156 + 1 " + modulo(6583591534156L + 1, pisanoPeriodArr.length))
+    //    println("modulos of 5618252L " + modulo(5618252L, pisanoPeriodArr.length))
+    //
+    //    println("pisanoPeriod array slice " + pisanoPeriodArr.slice(modulo(s, pisanoPeriodArr.length), modulo(e + 1, pisanoPeriodArr.length)).mkString(" "))
+    //    val currentDigit = pisanoPeriodArr.slice(modulo(s, pisanoPeriodArr.length), modulo(e + 1, pisanoPeriodArr.length)).sum
+    val currentDigit1 = pisanoPeriodArr.slice(modulo(s, pisanoPeriodArr.length), pisanoPeriodArr.length) sum
+    val currentDigit2 = pisanoPeriodArr.slice(0, modulo(e + 1, pisanoPeriodArr.length)) sum
 
-    modulo(currentDigit, 10)
+    val check = currentDigit1 + currentDigit2
+    modulo(check, 10)
+
   }
 
   def PisanoPeriod(m: Long): Array[Long] = {

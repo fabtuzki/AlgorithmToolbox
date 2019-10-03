@@ -26,7 +26,7 @@ object MaximumAmountOfGold extends App {
       for (column <- 1 to weight) {
         var maxValueWithoutMostRecentItem = 0
 
-        if (column - goldBar(row - 1) > 0) {
+        if (column - goldBar(row - 1) >= 0) {
           maxValueWithoutMostRecentItem += matrixT(row - 1)(column - goldBar(row - 1))
           //update the max value without most recent item in the case of column - row >= value of gold bar just eliminated
           if (column - matrixT(row - 1)(column - goldBar(row - 1)) >= goldBar(row - 1)) {
@@ -35,6 +35,7 @@ object MaximumAmountOfGold extends App {
         }
         val maxValueAtWeightOfPreviousItem = matrixT(row - 1)(column)
         val finalValue = Array(maxValueWithoutMostRecentItem, maxValueAtWeightOfPreviousItem).max
+        //        println("final value at row " + row + " and column " + column + " is " + finalValue)
         matrixT(row).update(column, finalValue)
       }
     }
